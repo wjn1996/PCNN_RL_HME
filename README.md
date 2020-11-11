@@ -34,3 +34,13 @@ At last, you can validate the model on the testing data, by:
 > python3 test.py --use_pcnn=true --test_select=false
 
 
+## plot
+We provide the  PR curve results of our model and other baselines, you can run:
+
+> python3 ./plot/draw_plot.py
+
+The PR curve is:
+
+The result is :![](https://github.com/wjn1996/PCNN_RL_HME/blob/main/plot/prcurve_PCNN%2BRL%2BHME.png)
+
+We also implement some extensive experiments, the results and analysis can be found in our papers.
