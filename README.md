@@ -1,10 +1,12 @@
 # PCNN+RL+HME
 
-&emsp;&emsp;This project is implemented for paper [Improving Reinforcement Learning for Neural Relation Extraction with Hierarchical Memory Extractor](https://arxiv.org/pdf/2010.14255.pdf) authors are Jianing Wang and Chong Su
+&emsp;&emsp;This project is implemented for paper [RH-Net: Improving Neural Relation Extraction via Reinforcement Learning and Hierarchical Relational Searching](https://arxiv.org/pdf/2010.14255.pdf), which is belongs to Jianing Wang.
+
+The old version paper is Improving Reinforcement Learning for Neural Relation Extraction with Hierarchical Memory Extractor.
 
 Abstract:
 
-&emsp;&emsp;Distant supervision relation extraction (DSRE) is an efficient method to extract semantic relations on a large-scale heuristic labeling corpus. However, it usually brings in a massive noisy data. In order to alleviate this problem, many recent approaches adopt reinforcement learning (RL), which aims to select correct data autonomously before relation classification. Although these RL methods outperform conventional multi-instance learning-based methods, there are still two neglected problems: 1) the existing RL methods ignore the feedback of noisy data, 2) the reduction of training corpus exacerbates long-tail problem. In this paper, we propose a novel framework to solve the two problems mentioned above. Firstly, we design a novel reward function to obtain feedback from both correct and noisy data. In addition, we use implicit relations information to improve RL. Secondly, we propose the hierarchical memory extractor (HME), which utilizes the gating mechanism to share the semantics from correlative instances between data-rich and data-poor classes. Moreover, we define a hierarchical weighted ranking loss function to implement top-down search processing. Extensive experiments conducted on the widely used NYT dataset show significant improvement over state-of-the-art baseline methods.
+&emsp;&emsp;Distant supervision (DS) aims to generate large-scale heuristic labeling corpus, which is widely used for neural relation extraction currently. However, it heavily suffers from noisy labeling and long-tail distributions. Many advanced approaches usually separately address two problems, which ignore their mutual interactions. In this paper, we propose a novel framework named RH-Net, which utilizes Reinforcement learning and Hierarchical relational searching module to improve relation extraction. We leverage reinforcement learning to instruct the model to select high quality instances. We then propose the hierarchical relational searching module to share the semantics from correlative instances between data-rich and data-poor classes. During iterative process, the two modules keep interacting to alleviate the noisy and long tail problem simultaneously. Extensive experiments on widely used NYT data set clearly show that our method significant improvements over state-of-the-art baselines.
 
 ## settings
 
@@ -44,3 +46,25 @@ The PR curve is:
 The result is :![](https://github.com/wjn1996/PCNN_RL_HME/blob/main/plot/prcurve_PCNN%2BRL%2BHME.png)
 
 We also implement some extensive experiments, the results and analysis can be found in our papers.
+
+---
+
+You can cite this paper by:
+
+```
+@article{DBLP:journals/corr/abs-2010-14255,
+  author    = {Jianing Wang and
+               Chong Su},
+  title     = {Improving Reinforcement Learning for Neural Relation Extraction with
+               Hierarchical Memory Extractor},
+  journal   = {CoRR},
+  volume    = {abs/2010.14255},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2010.14255},
+  archivePrefix = {arXiv},
+  eprint    = {2010.14255},
+  timestamp = {Mon, 02 Nov 2020 18:17:09 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2010-14255.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
